@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="GreenJournal.Views.NewEntryPage"
+             Shell.PresentationMode="ModalAnimated"
+             Title="Create a New Entry">
+    
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="submit" Clicked="OnSubmitClicked" />
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <!--This is an entry form of diary-->
+            <Label Text="Date" FontSize="Medium" />
+            <DatePicker x:Name="DateEntry">
+                <DatePicker.Format>MMM dd, yyyy</DatePicker.Format>
+            </DatePicker>
+            <Label Text="Title" FontSize="Medium" />
+            <Entry x:Name="TitleEntry"
+                   Placeholder="Enter Title" />
+            <Label Text="Content" FontSize="Medium" />
+            <Entry x:Name="ContentEntry"
+                   Placeholder="How was your day?" />
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

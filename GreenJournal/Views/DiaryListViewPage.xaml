@@ -2,6 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="GreenJournal.Views.DiaryListViewPage"
+             xmlns:local="clr-namespace:GreenJournal.ViewModels"
              Title="List View">
 
     <ContentPage.Content>
@@ -27,6 +28,17 @@
                             <Label Text="{Binding Content}"
                                LineBreakMode="TailTruncation"
                                FontSize="Small"/>
+                            
+                            <!--Move to DiaryDetailPage when tapped-->
+                            <StackLayout.GestureRecognizers>
+                                <TapGestureRecognizer 
+                                    NumberOfTapsRequired="1"
+                                    Command="{Binding Source={RelativeSource AncestorType={x:Type local:DiaryListViewVM}}, Path=ItemTapped}"
+                                    CommandParameter="{Binding .}">
+                                </TapGestureRecognizer>
+                            </StackLayout.GestureRecognizers>
+
+
                         </StackLayout>
 
                         <!--Border Line-->

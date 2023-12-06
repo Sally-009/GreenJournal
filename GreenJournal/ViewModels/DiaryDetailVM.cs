@@ -1,7 +1,9 @@
-﻿using System;
+﻿using GreenJournal.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading.Tasks;
 
 using Xamarin.Forms;
 
@@ -10,6 +12,7 @@ namespace GreenJournal.ViewModels
     public class DiaryDetailVM : BaseViewModel
     {
         private int itemID;
+        private Journals journal;
 
         public DiaryDetailVM()
         {
@@ -30,14 +33,15 @@ namespace GreenJournal.ViewModels
         }
 
         // This function works fine
+        // NEED FIX
         private async void LoadJournalDetail(int jounalID)
         {
-            var journal = await App.Database.GetJournalByIDAsync(jounalID);
+            var fetchedJournal = await App.Database.GetJournalByIDAsync(jounalID);
 
             if (journal != null)
             {
                 // Set the BindingContext to the retrieved journal
-                Application.Current.MainPage.BindingContext = journal;
+                journal = fetchedJournal;
             }
             else
             {

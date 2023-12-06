@@ -10,7 +10,7 @@ namespace GreenJournal.ViewModels
 {
     public class DiaryListViewVM : BaseViewModel
     {
-        public Command<Journals> ItemTapped { get; }
+        public Command ItemTapped { get; }
 
         public DiaryListViewVM()
         {
@@ -24,8 +24,12 @@ namespace GreenJournal.ViewModels
             if (journal == null)
                 return;
 
+            // Update ItemID propaty
+            var diaryDetailVM = new DiaryDetailVM();
+            diaryDetailVM.ItemID = journal.Id;
+
             //Use ID to go to the diary detail
-            await Shell.Current.GoToAsync($"//DiaryDetailPage?{nameof(DiaryDetailVM.ItemID)}={journal.Id}");
+            await Shell.Current.GoToAsync("//DiaryDetailPage");
         }
 
     }

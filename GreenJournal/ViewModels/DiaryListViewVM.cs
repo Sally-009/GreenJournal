@@ -1,4 +1,5 @@
 ﻿using GreenJournal.Models;
+using GreenJournal.Views;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -24,12 +25,12 @@ namespace GreenJournal.ViewModels
             if (journal == null)
                 return;
 
-            // Update ItemID propaty
-            var diaryDetailVM = new DiaryDetailVM();
-            diaryDetailVM.ItemID = journal.Id;
+            // Get Journal ID from the object
+            int journalID = journal.Id;
 
-            //Use ID to go to the diary detail
-            await Shell.Current.GoToAsync("//DiaryDetailPage");
+            // Go to the Detail Page with the ID
+            await Shell.Current.GoToAsync($"DiaryDetailPage?SelectedJournalID={journalID}");
+
         }
 
     }

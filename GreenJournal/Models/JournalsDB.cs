@@ -19,7 +19,7 @@ namespace GreenJournal.Models
             _database.CreateTableAsync<Journals>().Wait();
         }
 
-        // Return a list the journals
+        // Return a list of the journals
         public Task<List<Journals>> GetJournalsAsync()
         {
             return _database.Table<Journals>().ToListAsync();

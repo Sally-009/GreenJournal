@@ -12,7 +12,6 @@ namespace GreenJournal.ViewModels
     public class DiaryDetailVM : BaseViewModel
     {
         private int itemID;
-        private Journals journal;
 
         public DiaryDetailVM()
         {
@@ -36,12 +35,13 @@ namespace GreenJournal.ViewModels
         // NEED FIX
         private async void LoadJournalDetail(int jounalID)
         {
-            var fetchedJournal = await App.Database.GetJournalByIDAsync(jounalID);
+            var journal = await App.Database.GetJournalByIDAsync(jounalID);
 
             if (journal != null)
             {
                 // Set the BindingContext to the retrieved journal
-                journal = fetchedJournal;
+                //HERE
+                
             }
             else
             {

@@ -5,12 +5,13 @@
              x:DataType="viewmodels:DiaryDetailVM"
              x:Class="GreenJournal.Views.DiaryDetailPage"
              Shell.PresentationMode="ModalAnimated"
-             Title="{Binding Date, StringFormat='{0:MMMM d (ddd), yyyy}'}">
+             Title="{Binding SelectedJournal.Date, StringFormat='{0:MMMM d (ddd), yyyy}'}"
+             BindingContext="{Binding Source={RelativeSource Self}}">
 
     <ContentPage.Content>
         <StackLayout Spacing="20" Padding="15">
-            <Label Text="{Binding Title}" FontAttributes="Bold" FontSize="Large"/>
-            <Label Text="{Binding Content}" FontSize="Medium"/>
+            <Label Text="{Binding SelectedJournal.Title}" FontAttributes="Bold" FontSize="Large"/>
+            <Label Text="{Binding SelectedJournal.Content}" FontSize="Medium"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

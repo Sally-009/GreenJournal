@@ -5,9 +5,10 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using Xamarin.Forms;
 
+
 namespace GreenJournal.ViewModels
 {
-    public class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged 
     {
         bool isBusy = false;
         public bool IsBusy
@@ -16,12 +17,12 @@ namespace GreenJournal.ViewModels
             set { SetProperty(ref isBusy, value); }
         }
 
-        string title = string.Empty;
-        public string Title
-        {
-            get { return title; }
-            set { SetProperty(ref title, value); }
-        }
+        //string title = string.Empty;
+        //public string Title
+        //{
+        //    get { return title; }
+        //    set { SetProperty(ref title, value); }
+        //}
 
         protected bool SetProperty<T>(ref T backingStore, T value,
             [CallerMemberName] string propertyName = "",
@@ -35,6 +36,7 @@ namespace GreenJournal.ViewModels
             OnPropertyChanged(propertyName);
             return true;
         }
+
 
         #region INotifyPropertyChanged
         public event PropertyChangedEventHandler PropertyChanged;

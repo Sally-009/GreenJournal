@@ -13,6 +13,7 @@ using Xamarin.Forms;
 
 namespace GreenJournal.ViewModels
 {
+    [QueryProperty(nameof(SelectedJournalID), "jounalID")]
     public class DiaryDetailVM : BaseViewModel
     {
         // Get ID from List VIew

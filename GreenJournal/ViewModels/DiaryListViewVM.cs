@@ -29,7 +29,7 @@ namespace GreenJournal.ViewModels
             int journalID = journal.Id;
 
             // Go to the Detail Page with the ID
-            await Shell.Current.GoToAsync($"DiaryDetailPage?SelectedJournalID={journalID}");
+            await Shell.Current.GoToAsync($"DiaryDetailPage?jounalID={journalID}");
 
         }
 

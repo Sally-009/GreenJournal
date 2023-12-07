@@ -22,13 +22,13 @@ namespace GreenJournal.ViewModels
             set { LoadJournalDetail(value); }
         }
 
-        public Journals selectedJournal;
+        private Journals _selectedJournal;
 
         // use property
         public Journals SelectedJournal
         {
-            get { return selectedJournal; }
-            set { SetProperty(ref selectedJournal, value); }
+            get { return _selectedJournal; }
+            set { SetProperty(ref _selectedJournal, value); }
         }
 
         // constructor
@@ -40,7 +40,7 @@ namespace GreenJournal.ViewModels
         // Load and reflect data to binding data.
         public async void LoadJournalDetail(int journalID)
         {
-            var journal = await App.Database.GetJournalByIDAsync(journalID);
+            //var journal = await App.Database.GetJournalByIDAsync(journalID);
 
             try
             {

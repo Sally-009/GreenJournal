@@ -16,12 +16,16 @@
             <DatePicker x:Name="DateEntry">
                 <DatePicker.Format>MMM dd, yyyy</DatePicker.Format>
             </DatePicker>
+            
             <Label Text="Title" FontSize="Medium" />
             <Entry x:Name="TitleEntry"
                    Placeholder="Enter Title" />
+            
             <Label Text="Content" FontSize="Medium" />
-            <Entry x:Name="ContentEntry"
-                   Placeholder="How was your day?" />
+            <Editor x:Name="ContentEntry"
+                   Placeholder="How was your day?" 
+                    AutoSize="TextChanges"
+                    HeightRequest="150"/>
 
         </StackLayout>
     </ContentPage.Content>

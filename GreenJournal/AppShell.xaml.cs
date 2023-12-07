@@ -10,6 +10,7 @@ namespace GreenJournal
         public AppShell()
         {
             InitializeComponent();
+            Routing.RegisterRoute("DiaryDetailPage", typeof(DiaryDetailPage));
         }
 
     }

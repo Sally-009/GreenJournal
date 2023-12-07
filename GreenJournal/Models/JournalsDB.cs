@@ -19,10 +19,16 @@ namespace GreenJournal.Models
             _database.CreateTableAsync<Journals>().Wait();
         }
 
-        // Return a list the journals
+        // Return a list of the journals
         public Task<List<Journals>> GetJournalsAsync()
         {
             return _database.Table<Journals>().ToListAsync();
+        }
+
+        // Return one journal according to ID
+        public Task<Journals> GetJournalByIDAsync(int id)
+        {
+            return _database.Table<Journals>().Where(j => j.Id == id).FirstOrDefaultAsync();
         }
 
         // Store a new data into the DB

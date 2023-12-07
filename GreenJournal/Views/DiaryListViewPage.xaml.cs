@@ -1,8 +1,10 @@
-﻿using System;
+﻿using GreenJournal.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using GreenJournal.ViewModels;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
@@ -15,12 +17,18 @@ namespace GreenJournal.Views
         public DiaryListViewPage()
         {
             InitializeComponent();
+
+            // make the list page as a root of navigation
+            // Application.Current.MainPage = new NavigationPage(new DiaryListViewPage());
+
+            // Bind to VM file
+            BindingContext = new DiaryListViewVM();
         }
 
         protected override async void OnAppearing()
         {
             base.OnAppearing();
-            // Read the database
+            // Load the database
             ListView.ItemsSource = await App.Database.GetJournalsAsync();
         }
     }

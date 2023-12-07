@@ -35,5 +35,9 @@
         <ShellContent Title="Diary" Icon="book.png" Route="ListViewPage" ContentTemplate="{DataTemplate local:DiaryListViewPage}" />
     </TabBar>
 
+    <TabBar>
+        <!--<ShellContent Title="Diary Detail" Icon="book.png" Route="DiaryDetailPage" ContentTemplate="{DataTemplate local:DiaryDetailPage}" />-->
+    </TabBar>
+
 
 </Shell>

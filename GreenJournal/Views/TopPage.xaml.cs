@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GreenJournal.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,21 @@ namespace GreenJournal.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class TopPage : ContentPage
     {
+        private TopPageVM _viewModel;
+
         public TopPage()
         {
             InitializeComponent();
+
+            _viewModel = new TopPageVM();
+            BindingContext = _viewModel;
+        }
+
+        // update random diary
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            _viewModel.OnAppearing();
         }
     }
 }

@@ -39,6 +39,9 @@ namespace GreenJournal.Views
                 //collectionView.ItemsSource = await App.Database.GetJournalsAsync();
             }
 
+            // Show message when added the journal
+            await Application.Current.MainPage.DisplayAlert("", "New Journal Added Successfully!", "OK");
+
             // Go back to the previous page
             await Shell.Current.GoToAsync("..");
         }

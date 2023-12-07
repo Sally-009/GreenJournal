@@ -47,5 +47,13 @@ namespace GreenJournal.Models
 
         }
 
+        // Return the largest ID
+        public async Task<int> GetMaxJournalIDAsync()
+        {
+            var result = await _database.Table<Journals>().OrderByDescending(j => j.Id).FirstOrDefaultAsync();
+            return result?.Id ?? 0;
+        }
+
+
     }
 }

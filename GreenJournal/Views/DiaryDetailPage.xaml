@@ -4,7 +4,6 @@
              xmlns:viewmodels="clr-namespace:GreenJournal.ViewModels" 
              x:DataType="viewmodels:DiaryDetailVM"
              x:Class="GreenJournal.Views.DiaryDetailPage"
-             Shell.PresentationMode="ModalAnimated"
              Title="{Binding SelectedJournal.Date, StringFormat='{0:MMMM d (ddd), yyyy}'}"
              BindingContext="{Binding Source={RelativeSource Self}}">
 

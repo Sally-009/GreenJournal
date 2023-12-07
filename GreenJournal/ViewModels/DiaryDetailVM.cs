@@ -38,7 +38,6 @@ namespace GreenJournal.ViewModels
 
 
         // Load and reflect data to binding data.
-        // It seems not called
         public async void LoadJournalDetail(int journalID)
         {
             var journal = await App.Database.GetJournalByIDAsync(journalID);
@@ -57,27 +56,5 @@ namespace GreenJournal.ViewModels
             }
         }
 
-        //private int journalID;
-
-        // get journalID from list view
-
-
-        //// binding data
-        //public DateTime Date
-        //{
-        //    get
-        //    {   return selectedJournal.Date;}
-
-        //}
-
-        //public string Title
-        //{
-        //    get { return selectedJournal.Title; }
-        //}
-
-        //public string Content
-        //{
-        //    get { return selectedJournal.Content; }
-        //}
     }
 }

@@ -59,12 +59,17 @@ namespace GreenJournal.ViewModels
         // Delete Operation
         public async Task OnDeleteClickedAsync()
         {
-            // delete teh journal
-            await App.Database.DeleteJournalAsync(SelectedJournal.Id);
+            bool userConsent = await Application.Current.MainPage.DisplayAlert("Delete Confirmation", $"Are you sure you want to delete the journal '{SelectedJournal.Title}'?", "Yes", "No");
 
-            // show message
-            await Application.Current.MainPage.DisplayAlert(SelectedJournal.Title, "Journal Deleted", "OK");
+            if (userConsent)
+            {
+                // delete teh journal
+                await App.Database.DeleteJournalAsync(SelectedJournal.Id);
 
+                // show message
+                await Application.Current.MainPage.DisplayAlert(SelectedJournal.Title, "Journal Deleted", "OK");
+            }
+            
             // go back to the previous page
             await Shell.Current.GoToAsync("..");
         }

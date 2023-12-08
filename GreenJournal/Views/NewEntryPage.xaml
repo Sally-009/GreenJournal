@@ -6,7 +6,7 @@
              Title="Create a New Entry">
     
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="submit" Clicked="OnSubmitClicked" />
+        <ToolbarItem Text="Submit" Clicked="OnSubmitClicked" />
     </ContentPage.ToolbarItems>
 
     <ContentPage.Content>

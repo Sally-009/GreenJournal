@@ -37,6 +37,13 @@ namespace GreenJournal.Models
             return _database.InsertAsync(journals);
         }
 
+        // Update an existing journal in the DB
+        public Task<int> UpdateJournalAsync(Journals journal)
+        {
+            return _database.UpdateAsync(journal);
+        }
+
+
         // Used for debug: Delete all data and recreate table
         public async Task DeleteAllData()
         {
@@ -52,6 +59,16 @@ namespace GreenJournal.Models
         {
             var result = await _database.Table<Journals>().OrderByDescending(j => j.Id).FirstOrDefaultAsync();
             return result?.Id ?? 0;
+        }
+
+        // Delete the selected Journal
+        public async Task DeleteJournalAsync(int id)
+        {
+            var journalToDelete = await _database.Table<Journals>().Where(j => j.Id == id).FirstOrDefaultAsync();
+            if (journalToDelete != null)
+            {
+                await _database.DeleteAsync(journalToDelete);
+            }
         }
 
 

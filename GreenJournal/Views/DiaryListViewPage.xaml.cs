@@ -18,9 +18,6 @@ namespace GreenJournal.Views
         {
             InitializeComponent();
 
-            // make the list page as a root of navigation
-            // Application.Current.MainPage = new NavigationPage(new DiaryListViewPage());
-
             // Bind to VM file
             BindingContext = new DiaryListViewVM();
         }
@@ -29,7 +26,13 @@ namespace GreenJournal.Views
         {
             base.OnAppearing();
             // Load the database
-            ListView.ItemsSource = await App.Database.GetJournalsAsync();
+            List<Journals> journals = await App.Database.GetJournalsAsync();
+
+            // Sort the list by date
+            journals.Sort((journal1, journal2) => journal1.Date.CompareTo(journal2.Date));
+
+            // Set the sorted list as the ItemsSource
+            ListView.ItemsSource = journals;
         }
     }
 }

@@ -37,6 +37,13 @@ namespace GreenJournal.Models
             return _database.InsertAsync(journals);
         }
 
+        // Update an existing journal in the DB
+        public Task<int> UpdateJournalAsync(Journals journal)
+        {
+            return _database.UpdateAsync(journal);
+        }
+
+
         // Used for debug: Delete all data and recreate table
         public async Task DeleteAllData()
         {

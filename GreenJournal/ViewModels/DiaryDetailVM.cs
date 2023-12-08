@@ -24,7 +24,7 @@ namespace GreenJournal.ViewModels
 
         private Journals _selectedJournal;
 
-        // use property
+        // property
         public Journals SelectedJournal
         {
             get { return _selectedJournal; }
@@ -67,6 +67,12 @@ namespace GreenJournal.ViewModels
 
             // go back to the previous page
             await Shell.Current.GoToAsync("..");
+        }
+
+        // Move to the edit page
+        public async Task OnEditClickedAsync()
+        {
+            await Shell.Current.GoToAsync($"EditDiaryPage?journalID={SelectedJournal.Id}");
         }
     }
 }

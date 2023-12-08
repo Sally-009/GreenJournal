@@ -21,6 +21,7 @@ namespace GreenJournal.Views
             BindingContext = new DiaryDetailVM();
         }
 
+
         private async void OnDeleteClicked(object sender, EventArgs e)
         {
             if (BindingContext is DiaryDetailVM viewModel)
@@ -28,6 +29,16 @@ namespace GreenJournal.Views
                 await viewModel.OnDeleteClickedAsync();
             }
         }
+
+        private async void OnEditClicked(object sender, EventArgs e)
+        {
+            // Navigate to the edit page, passing the journal ID
+            if (BindingContext is DiaryDetailVM viewModel)
+            {
+                await viewModel.OnEditClickedAsync();
+            }
+        }
+
 
     }
 

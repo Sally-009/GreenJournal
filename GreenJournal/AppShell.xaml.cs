@@ -10,7 +10,10 @@ namespace GreenJournal
         public AppShell()
         {
             InitializeComponent();
+            // Add pages that is not in the Tab Bar
             Routing.RegisterRoute("DiaryDetailPage", typeof(DiaryDetailPage));
+            Routing.RegisterRoute("EditDiaryPage", typeof(EditDiaryPage));
+
         }
 
     }

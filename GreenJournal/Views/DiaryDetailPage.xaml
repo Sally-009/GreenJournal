@@ -8,6 +8,7 @@
              BindingContext="{Binding Source={RelativeSource Self}}">
 
     <ContentPage.ToolbarItems>
+        <ToolbarItem IconImageSource="pen_to_square.png" Text="Edit" Clicked="OnEditClicked" />
         <ToolbarItem IconImageSource="trash_can.png" Text="Delete" Clicked="OnDeleteClicked" />
     </ContentPage.ToolbarItems>
 

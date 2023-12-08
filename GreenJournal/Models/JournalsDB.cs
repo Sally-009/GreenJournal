@@ -54,6 +54,16 @@ namespace GreenJournal.Models
             return result?.Id ?? 0;
         }
 
+        // Delete the selected Journal
+        public async Task DeleteJournalAsync(int id)
+        {
+            var journalToDelete = await _database.Table<Journals>().Where(j => j.Id == id).FirstOrDefaultAsync();
+            if (journalToDelete != null)
+            {
+                await _database.DeleteAsync(journalToDelete);
+            }
+        }
+
 
     }
 }

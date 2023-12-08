@@ -56,5 +56,17 @@ namespace GreenJournal.ViewModels
             }
         }
 
+        // Delete Operation
+        public async Task OnDeleteClickedAsync()
+        {
+            // delete teh journal
+            await App.Database.DeleteJournalAsync(SelectedJournal.Id);
+
+            // show message
+            await Application.Current.MainPage.DisplayAlert(SelectedJournal.Title, "Journal Deleted", "OK");
+
+            // go back to the previous page
+            await Shell.Current.GoToAsync("..");
+        }
     }
 }

@@ -45,8 +45,5 @@ namespace GreenJournal.Views
             // Go back to the previous page
             await Shell.Current.GoToAsync("..");
         }
-
-        // Show a message when submission succeeded
-
     }
 }

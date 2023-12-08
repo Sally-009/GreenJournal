@@ -18,9 +18,6 @@ namespace GreenJournal.Views
         {
             InitializeComponent();
 
-            // make the list page as a root of navigation
-            // Application.Current.MainPage = new NavigationPage(new DiaryListViewPage());
-
             // Bind to VM file
             BindingContext = new DiaryListViewVM();
         }
